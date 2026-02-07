@@ -1,182 +1,210 @@
-# Serverless Event CRM & Landing Page
+# Fashion Nights - Serverless CRM Landing Page
 
-A high-performance landing page featuring a custom serverless backend. It captures leads, processes them via Google Sheets API, and sends automated, formatted HTML emails using Nodemailer—all hosted on Vercel.
+**[🌐 View Live Site](https://www.fashionnights.in/)**
+
+This is a **white-label template** of a commercial freelance project. It demonstrates a full-stack web application for managing talent discovery, brand collaborations, and community engagement using serverless architecture.
+
+## 🎯 Project Overview
+
+Fashion Nights is a platform that connects fashion talent, brands, and community members. This repository contains:
+
+- **Production-Ready Frontend** (React + TypeScript + Vite)
+- **Serverless Backend** (Vercel Functions + Node.js)
+- **Lead Management System** (Google Sheets API)
+- **Automated Email Notifications** (Nodemailer + Gmail SMTP)
+
+The application is **fully deployed and live** at [fashionnights.in](https://www.fashionnights.in/). This template can be forked and customized for similar use cases.
 
 ## 🚀 Key Features
 
-- **Real-Time Database:** Direct integration with Google Sheets API (acts as a CMS/Database).
-- **Automated Communication:** Custom HTML email triggers via Nodemailer (Gmail SMTP).
-- **Dynamic Forms:** Multi-step forms for "Talent", "Brand", and "Community" segments.
-- **Performance:** Optimized React/Vite architecture with responsive Tailwind CSS design.
-- **Production Ready:** Deployed on Vercel with serverless functions and API routes.
+- ✅ **Real-Time Database:** Google Sheets API acts as both CMS and database
+- ✅ **Automated Email System:** HTML-formatted emails via Nodemailer
+- ✅ **Multi-Segment Forms:** Dedicated forms for Talent, Brands, and Community
+- ✅ **Responsive Design:** Mobile-first UI with Tailwind CSS + Radix UI
+- ✅ **Image Galleries:** Unsplash integration with fallback error handling
+- ✅ **Form Validation:** Client-side validation with professional error messages
+- ✅ **Loading States:** Visual feedback during form submissions
+- ✅ **Toast Notifications:** Real-time success/error messages with Sonner
+- ✅ **Production Optimized:** Deployed on Vercel with serverless functions
 
 ## 🛠️ Tech Stack
 
-### Frontend
+| Layer | Technology |
+|-------|-----------|
+| **Frontend Framework** | React 18 + TypeScript |
+| **Build Tool** | Vite |
+| **Styling** | Tailwind CSS + PostCSS |
+| **UI Components** | Radix UI |
+| **Icons** | Lucide React |
+| **Routing** | React Router v6 |
+| **Notifications** | Sonner |
+| **Animations** | Framer Motion |
+| **Backend Runtime** | Node.js (Serverless) |
+| **Email Service** | Nodemailer + Gmail SMTP |
+| **Database** | Google Sheets API |
+| **Hosting** | Vercel |
+| **Form Handling** | React Hook Form + Zod validation |
 
-- **Framework:** React 18 with TypeScript
-- **Build Tool:** Vite
-- **Styling:** Tailwind CSS + PostCSS
-- **UI Components:** Radix UI (accessible component library)
-- **Icons:** Lucide React
-- **Routing:** React Router v6
-- **Notifications:** Sonner (toast notifications)
-
-### Backend
-
-- **Runtime:** Node.js (Serverless Functions)
-- **Email Service:** Nodemailer with Gmail SMTP
-- **Data Storage:** Google Sheets API integration
-- **Deployment:** Vercel Functions
-
-### Infrastructure
-
-- **Hosting:** Vercel (Frontend + Serverless)
-- **Database:** Google Sheets (Lead Management)
-- **Email:** Gmail SMTP (Automated Notifications)
-
-## 📋 Project Structure
+## 📁 Project Structure
 
 ```
-.
-├── index.html                    # HTML entry point
+serverless-crm-landing/
 ├── src/
-│   ├── main.tsx                 # React DOM render
 │   ├── app/
-│   │   ├── App.tsx              # Main router component
-│   │   ├── components/          # Reusable React components
-│   │   │   ├── header.tsx       # Navigation header
-│   │   │   ├── footer.tsx       # Footer with social links
-│   │   │   ├── ui/              # Radix UI component library
-│   │   │   └── figma/           # Custom components
-│   │   └── pages/               # Route pages
-│   │       ├── home.tsx         # Landing page
-│   │       ├── about.tsx        # About section
-│   │       ├── talent.tsx       # Talent registration form
-│   │       ├── brands.tsx       # Brand registration form
-│   │       └── community.tsx    # Community section
-│   └── styles/                  # Global styles
-├── vercel.json                  # Vercel deployment config
-├── vite.config.ts              # Vite bundler config
-└── package.json                # Dependencies & scripts
+│   │   ├── pages/
+│   │   │   ├── home.tsx          # Landing page with hero & galleries
+│   │   │   ├── brands.tsx        # Brand partnership form
+│   │   │   ├── talent.tsx        # Talent submission form
+│   │   │   ├── community.tsx     # Community signup form
+│   │   │   └── about.tsx         # About page
+│   │   ├── components/
+│   │   │   ├── header.tsx        # Navigation bar
+│   │   │   ├── footer.tsx        # Footer with social links
+│   │   │   ├── ui/               # Radix UI component library
+│   │   │   └── figma/            # Custom image components
+│   │   └── App.tsx               # Router configuration
+│   ├── styles/                   # Global CSS
+│   └── main.tsx                  # React entry point
+├── index.html                    # HTML template
+├── vercel.json                   # Vercel deployment config
+├── vite.config.ts               # Vite bundler config
+├── tailwind.config.js            # Tailwind CSS config
+└── package.json                  # Dependencies & scripts
 ```
 
-## 🔧 Setup & Configuration
+## ⚙️ Setup & Configuration
 
 ### Prerequisites
 
-- Node.js 16+ and npm
-- Google Cloud Account with Service Account credentials
-- Gmail account with App Password enabled
+- **Node.js 16+** and npm
+- **Google Cloud Account** with Sheets API enabled
+- **Gmail Account** with App Password configured
 
-### Installation
+### Local Installation
 
 1. **Clone the repository:**
-
    ```bash
    git clone https://github.com/YOUR_USERNAME/serverless-crm-landing.git
    cd serverless-crm-landing
    ```
 
 2. **Install dependencies:**
-
    ```bash
    npm install
    ```
 
-3. **Configure environment variables:**
-   - Copy `.env.example` to `.env.local`
-   - Add your credentials (see below)
+3. **Create `.env.local` file:**
+   ```env
+   # Google Sheets API
+   VITE_GOOGLE_CLIENT_EMAIL="your-service-account@project.iam.gserviceaccount.com"
+   VITE_GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
+   VITE_GOOGLE_SHEET_ID="your-google-sheet-id-here"
+   
+   # Email Configuration
+   EMAIL_USER="your-email@gmail.com"
+   EMAIL_PASS="your-gmail-app-password"
+   ADMIN_EMAIL="admin@fashionnights.in"
+   ```
 
 4. **Run development server:**
    ```bash
    npm run dev
    ```
-   The app will be available at `http://localhost:5173`
+   Visit: `http://localhost:5173`
 
-### Environment Variables
+### Setting Up Google Sheets Integration
 
-Create a `.env.local` file with the following:
+1. **Create Google Cloud Project:**
+   - Go to [Google Cloud Console](https://console.cloud.google.com/)
+   - Create a new project
+   - Enable the **Google Sheets API**
 
-```env
-# Google Sheets API Configuration
-GOOGLE_CLIENT_EMAIL="your-service-account@project.iam.gserviceaccount.com"
-GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n..."
-GOOGLE_SHEET_ID="your-google-sheet-id"
+2. **Create Service Account:**
+   - Navigate to "Service Accounts"
+   - Create a new service account
+   - Generate a JSON key file
+   - Extract `client_email` and `private_key` values
 
-# Email Configuration
-EMAIL_USER="your-email@gmail.com"
-EMAIL_PASS="your-gmail-app-password"
-ADMIN_EMAIL="notifications@example.com"
-```
+3. **Create Google Sheet:**
+   - Create a new sheet for your leads
+   - Share it with the service account email
+   - Copy the Sheet ID from the URL
 
-**Getting Google Credentials:**
+### Gmail App Password
 
-1. Create a Google Cloud project
-2. Enable the Google Sheets API
-3. Create a Service Account and download the JSON key
-4. Extract `client_email` and `private_key` from the key file
-
-**Gmail App Password:**
-
-1. Enable 2-Factor Authentication on your Gmail account
+1. Enable 2-Factor Authentication on Gmail
 2. Go to [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
-3. Generate an app-specific password for your app
+3. Create an "App password" for this application
+4. Use the generated password in `.env.local`
 
-## 🚀 Deployment
+## 🚀 Deployment to Vercel
 
-### Deploy to Vercel (Recommended)
+### Automatic Deployment
+
+1. **Push to GitHub:**
+   ```bash
+   git push origin main
+   ```
+
+2. **Connect to Vercel:**
+   - Go to [vercel.com](https://vercel.com)
+   - Import your GitHub repository
+   - Vercel auto-detects Vite configuration
+
+3. **Add Environment Variables:**
+   - In Vercel Dashboard → Settings → Environment Variables
+   - Add all variables from your `.env.local`
+
+4. **Deploy:**
+   - Vercel automatically builds on every push to `main`
+
+### Manual Deployment
 
 ```bash
-# Install Vercel CLI
 npm i -g vercel
-
-# Deploy
 vercel
 ```
 
-Vercel will automatically:
+## 📊 Application Pages
 
-- Build the project
-- Deploy serverless functions
-- Set environment variables from `.env.local`
+| Page | Route | Purpose |
+|------|-------|---------|
+| Home | `/` | Hero section, platform overview, galleries |
+| Talent | `/talent` | Talent portfolio submission form |
+| Brands | `/brands` | Brand partnership inquiry form |
+| Community | `/community` | Community membership signup |
+| About | `/about` | Platform information |
 
-### Environment Variables in Vercel
+## 📝 Features in Detail
 
-1. Go to your Vercel project dashboard
-2. Settings → Environment Variables
-3. Add all variables from `.env.local`
+### Form Submissions
 
-## 📊 Features in Detail
+All forms include:
+- Client-side validation
+- Loading states with animations
+- Success toast notifications
+- Automatic data export to Google Sheets
+- Confirmation emails sent to users
 
-### Lead Capture
+### Image Handling
 
-- Multi-step forms collect talent, brand, and community information
-- Form validation and error handling
-- Real-time toast notifications for user feedback
-
-### Google Sheets Integration
-
-- Leads are automatically saved to a Google Sheet
-- Acts as both database and admin dashboard
-- Easy to query and analyze lead data
+- Images sourced from Unsplash API
+- Lazy loading for performance
+- Error fallbacks for broken images
+- Responsive image sizing
 
 ### Email Notifications
 
-- Automated welcome emails to leads
-- Formatted HTML emails with branding
-- Admin notifications for new submissions
+Form submissions trigger automated emails with:
+- Branded HTML templates
+- Personalized content
+- Professional formatting
+- Admin notifications
 
-### Responsive Design
-
-- Mobile-first Tailwind CSS design
-- Works on all screen sizes
-- Accessible components using Radix UI
-
-## 🧪 Testing
+## 🧪 Development Commands
 
 ```bash
-# Run development server
+# Start dev server
 npm run dev
 
 # Build for production
@@ -184,30 +212,61 @@ npm run build
 
 # Preview production build
 npm run preview
+
+# Type checking
+npm run type-check
+
+# Linting (if configured)
+npm run lint
 ```
+
+## 🔒 Security Considerations
+
+- ✅ Environment variables secured on Vercel
+- ✅ No sensitive data in version control (use `.gitignore`)
+- ✅ Service account authentication for Google APIs
+- ✅ CORS properly configured
+- ✅ Form validation on client and server
+- ✅ Email verification recommended
 
 ## 📈 Performance
 
-- Lighthouse Score: 100/100 (Accessibility, Best Practices)
-- Fast Core Web Vitals
-- Optimized images from Unsplash
-- Minified CSS and JavaScript
+- **Lighthouse Score:** ~95+ (Performance, Accessibility, Best Practices)
+- **Core Web Vitals:** All green
+- **Image Optimization:** Unsplash URLs with size parameters
+- **Code Splitting:** Automatic with Vite
 
-## 🔒 Security
+## 🎨 Customization
 
-- Environment variables stored securely on Vercel
-- No sensitive data in version control
-- Google Sheets API uses service account authentication
-- CORS-enabled for frontend-backend communication
+To customize for your own project:
 
-## 📝 License
+1. Update colors in `tailwind.config.js`
+2. Modify form fields in page components (`pages/talent.tsx`, etc.)
+3. Change branding in `header.tsx` and `footer.tsx`
+4. Update Google Sheet structure to match your needs
+5. Customize email templates in serverless functions
 
-This project is open source and available under the MIT License.
+## 📚 Resources
 
-## 👨‍💻 Author
+- [React Documentation](https://react.dev)
+- [Vite Guide](https://vitejs.dev)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Radix UI Components](https://www.radix-ui.com)
+- [Vercel Docs](https://vercel.com/docs)
+- [Google Sheets API](https://developers.google.com/sheets/api)
 
-Built as a demonstration of modern full-stack web development with serverless architecture.
+## 📄 License
+
+This project is available under the MIT License. Feel free to fork and modify for your own projects.
+
+## 👨‍💻 Contact & Support
+
+**Developer:** Akash K  
+**Email:** [akash343k@gmail.com](mailto:akash343k@gmail.com)  
+**LinkedIn:** [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)  
+
+For questions, feature requests, or customization services, feel free to reach out!
 
 ---
 
-**[Deploy to Vercel](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/serverless-crm-landing)**
+**Built with ❤️ using modern web technologies**
