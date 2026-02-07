@@ -29,21 +29,21 @@ The application is **fully deployed and live** at [fashionnights.in](https://www
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| **Frontend Framework** | React 18 + TypeScript |
-| **Build Tool** | Vite |
-| **Styling** | Tailwind CSS + PostCSS |
-| **UI Components** | Radix UI |
-| **Icons** | Lucide React |
-| **Routing** | React Router v6 |
-| **Notifications** | Sonner |
-| **Animations** | Framer Motion |
-| **Backend Runtime** | Node.js (Serverless) |
-| **Email Service** | Nodemailer + Gmail SMTP |
-| **Database** | Google Sheets API |
-| **Hosting** | Vercel |
-| **Form Handling** | React Hook Form + Zod validation |
+| Layer                  | Technology                       |
+| ---------------------- | -------------------------------- |
+| **Frontend Framework** | React 18 + TypeScript            |
+| **Build Tool**         | Vite                             |
+| **Styling**            | Tailwind CSS + PostCSS           |
+| **UI Components**      | Radix UI                         |
+| **Icons**              | Lucide React                     |
+| **Routing**            | React Router v6                  |
+| **Notifications**      | Sonner                           |
+| **Animations**         | Framer Motion                    |
+| **Backend Runtime**    | Node.js (Serverless)             |
+| **Email Service**      | Nodemailer + Gmail SMTP          |
+| **Database**           | Google Sheets API                |
+| **Hosting**            | Vercel                           |
+| **Form Handling**      | React Hook Form + Zod validation |
 
 ## 📁 Project Structure
 
@@ -83,23 +83,26 @@ serverless-crm-landing/
 ### Local Installation
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/YOUR_USERNAME/serverless-crm-landing.git
    cd serverless-crm-landing
    ```
 
 2. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 3. **Create `.env.local` file:**
+
    ```env
    # Google Sheets API
    VITE_GOOGLE_CLIENT_EMAIL="your-service-account@project.iam.gserviceaccount.com"
    VITE_GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
    VITE_GOOGLE_SHEET_ID="your-google-sheet-id-here"
-   
+
    # Email Configuration
    EMAIL_USER="your-email@gmail.com"
    EMAIL_PASS="your-gmail-app-password"
@@ -142,6 +145,7 @@ serverless-crm-landing/
 ### Automatic Deployment
 
 1. **Push to GitHub:**
+
    ```bash
    git push origin main
    ```
@@ -167,19 +171,20 @@ vercel
 
 ## 📊 Application Pages
 
-| Page | Route | Purpose |
-|------|-------|---------|
-| Home | `/` | Hero section, platform overview, galleries |
-| Talent | `/talent` | Talent portfolio submission form |
-| Brands | `/brands` | Brand partnership inquiry form |
-| Community | `/community` | Community membership signup |
-| About | `/about` | Platform information |
+| Page      | Route        | Purpose                                    |
+| --------- | ------------ | ------------------------------------------ |
+| Home      | `/`          | Hero section, platform overview, galleries |
+| Talent    | `/talent`    | Talent portfolio submission form           |
+| Brands    | `/brands`    | Brand partnership inquiry form             |
+| Community | `/community` | Community membership signup                |
+| About     | `/about`     | Platform information                       |
 
 ## 📝 Features in Detail
 
 ### Form Submissions
 
 All forms include:
+
 - Client-side validation
 - Loading states with animations
 - Success toast notifications
@@ -196,6 +201,7 @@ All forms include:
 ### Email Notifications
 
 Form submissions trigger automated emails with:
+
 - Branded HTML templates
 - Personalized content
 - Professional formatting
@@ -263,7 +269,7 @@ This project is available under the MIT License. Feel free to fork and modify fo
 
 **Developer:** Akash K  
 **Email:** [akash343k@gmail.com](mailto:akash343k@gmail.com)  
-**LinkedIn:** [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)  
+**LinkedIn:** [https://www.linkedin.com/feed/](https://www.linkedin.com/feed/)
 
 For questions, feature requests, or customization services, feel free to reach out!
 
