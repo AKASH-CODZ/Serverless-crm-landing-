@@ -269,7 +269,7 @@ This project is available under the MIT License. Feel free to fork and modify fo
 
 **Developer:** Akash K  
 **Email:** [akash343k@gmail.com](mailto:akash343k@gmail.com)  
-**LinkedIn:** [https://www.linkedin.com/feed/](https://www.linkedin.com/feed/)
+**LinkedIn:** [https://www.linkedin.com/in/akash-k-8449b828a/](https://www.linkedin.com/in/akash-k-8449b828a/)
 
 For questions, feature requests, or customization services, feel free to reach out!
 
