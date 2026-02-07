@@ -102,23 +102,23 @@ export function HomePage() {
 
           {/* Community Gallery Grid (plain images) */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">
-            <div className="rounded-[8px] overflow-hidden h-64 md:h-72">
-              <img src="/assets/services/runway.jpeg" alt="Runway Talent" className="w-full h-full object-contain" />
+            <div className="rounded-[8px] overflow-hidden h-64 md:h-72 bg-gray-900 flex items-center justify-center">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop" alt="Runway Talent" className="w-full h-full object-cover" loading="lazy" />
             </div>
-            <div className="rounded-[8px] overflow-hidden h-64 md:h-72">
-              <img src="/assets/services/rising-voices.jpeg" alt="Rising Voices" className="w-full h-full object-contain" />
+            <div className="rounded-[8px] overflow-hidden h-64 md:h-72 bg-gray-900 flex items-center justify-center">
+              <img src="https://images.unsplash.com/photo-1595777712802-5b02bfc3ee50?w=400&h=400&fit=crop" alt="Rising Voices" className="w-full h-full object-cover" loading="lazy" />
             </div>
-            <div className="rounded-[8px] overflow-hidden h-64 md:h-72">
-              <img src="/assets/services/signature-live.jpeg" alt="Signature Live" className="w-full h-full object-contain" />
+            <div className="rounded-[8px] overflow-hidden h-64 md:h-72 bg-gray-900 flex items-center justify-center">
+              <img src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=400&h=400&fit=crop" alt="Signature Live" className="w-full h-full object-cover" loading="lazy" />
             </div>
-            <div className="rounded-[8px] overflow-hidden h-64 md:h-72">
-              <img src="/assets/services/brand-connect.jpeg" alt="Brand Connect" className="w-full h-full object-contain" />
+            <div className="rounded-[8px] overflow-hidden h-64 md:h-72 bg-gray-900 flex items-center justify-center">
+              <img src="https://images.unsplash.com/photo-1441986300352-c5ad7f72a742?w=400&h=400&fit=crop" alt="Brand Connect" className="w-full h-full object-cover" loading="lazy" />
             </div>
-            <div className="rounded-[8px] overflow-hidden h-64 md:h-72">
-              <img src="/assets/services/talent-scouting.jpeg" alt="Talent Scouting" className="w-full h-full object-contain" />
+            <div className="rounded-[8px] overflow-hidden h-64 md:h-72 bg-gray-900 flex items-center justify-center">
+              <img src="https://images.unsplash.com/photo-1556821552-5b0d5ce7e5a5?w=400&h=400&fit=crop" alt="Talent Scouting" className="w-full h-full object-cover" loading="lazy" />
             </div>
-            <div className="rounded-[8px] overflow-hidden h-64 md:h-72">
-              <img src="/assets/services/creative-experience.jpeg" alt="Creative Experience" className="w-full h-full object-contain" />
+            <div className="rounded-[8px] overflow-hidden h-64 md:h-72 bg-gray-900 flex items-center justify-center">
+              <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=400&fit=crop" alt="Creative Experience" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
 
@@ -133,9 +133,9 @@ export function HomePage() {
                 <Link to="/community" className="block group">
                   <div className="relative rounded-[10px] overflow-hidden h-80 md:h-88 shadow-lg">
                     <motion.img 
-                      src="/assets/services/Our Curated Experiences/WhatsApp Image 2026-01-30 at 6.24.19 PM.jpeg" 
+                      src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=500&fit=crop" 
                       alt="Runway Talent Curation" 
-                      className="w-full h-full object-contain cursor-pointer"
+                      className="w-full h-full object-cover cursor-pointer"
                       initial={{ scale: 1, x: 0 }}
                       whileHover={{ 
                         scale: 0.95,
@@ -165,9 +165,9 @@ export function HomePage() {
                 <Link to="/community" className="block group">
                   <div className="relative rounded-[10px] overflow-hidden h-80 md:h-88 shadow-lg">
                     <motion.img 
-                      src="/assets/services/Our Curated Experiences/WhatsApp Image 2026-01-30 at 6.24.19 PM-2.jpeg" 
+                      src="https://images.unsplash.com/photo-1595777712802-5b02bfc3ee50?w=500&h=500&fit=crop" 
                       alt="Rising Voices Platform" 
-                      className="w-full h-full object-contain cursor-pointer"
+                      className="w-full h-full object-cover cursor-pointer"
                       initial={{ scale: 1, x: 0 }}
                       whileHover={{ 
                         scale: 0.95,
@@ -197,9 +197,9 @@ export function HomePage() {
                 <Link to="/community" className="block group">
                   <div className="relative rounded-[10px] overflow-hidden h-80 md:h-88 shadow-lg">
                     <motion.img 
-                      src="/assets/services/Our Curated Experiences/WhatsApp Image 2026-01-30 at 6.24.19 PM-3.jpeg" 
+                      src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=500&h=500&fit=crop" 
                       alt="Signature Live Experiences" 
-                      className="w-full h-full object-contain cursor-pointer"
+                      className="w-full h-full object-cover cursor-pointer"
                       initial={{ scale: 1, x: 0 }}
                       whileHover={{ 
                         scale: 0.95,
@@ -229,9 +229,9 @@ export function HomePage() {
                 <Link to="/community" className="block group">
                   <div className="relative rounded-[10px] overflow-hidden h-80 md:h-88 shadow-lg">
                     <motion.img 
-                      src="/assets/services/Our Curated Experiences/WhatsApp Image 2026-01-30 at 6.24.20 PM.jpeg" 
+                      src="https://images.unsplash.com/photo-1441986300352-c5ad7f72a742?w=500&h=500&fit=crop" 
                       alt="Brand Connect Studio" 
-                      className="w-full h-full object-contain cursor-pointer"
+                      className="w-full h-full object-cover cursor-pointer"
                       initial={{ scale: 1, x: 0 }}
                       whileHover={{ 
                         scale: 0.95,
@@ -261,9 +261,9 @@ export function HomePage() {
                 <Link to="/community" className="block group">
                   <div className="relative rounded-[10px] overflow-hidden h-80 md:h-88 shadow-lg">
                     <motion.img 
-                      src="/assets/services/Our Curated Experiences/WhatsApp Image 2026-01-30 at 6.24.20 PM-2.jpeg" 
+                      src="https://images.unsplash.com/photo-1556821552-5b0d5ce7e5a5?w=500&h=500&fit=crop" 
                       alt="Talent Scouting & Discovery" 
-                      className="w-full h-full object-contain cursor-pointer"
+                      className="w-full h-full object-cover cursor-pointer"
                       initial={{ scale: 1, x: 0 }}
                       whileHover={{ 
                         scale: 0.95,
@@ -293,9 +293,9 @@ export function HomePage() {
                 <Link to="/community" className="block group">
                   <div className="relative rounded-[10px] overflow-hidden h-80 md:h-88 shadow-lg">
                     <motion.img 
-                      src="/assets/services/Our Curated Experiences/WhatsApp Image 2026-01-30 at 6.24.20 PM-3.jpeg" 
+                      src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500&h=500&fit=crop" 
                       alt="Creative Experience Management" 
-                      className="w-full h-full object-contain cursor-pointer"
+                      className="w-full h-full object-cover cursor-pointer"
                       initial={{ scale: 1, x: 0 }}
                       whileHover={{ 
                         scale: 0.95,

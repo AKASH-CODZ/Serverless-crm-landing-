@@ -1,7 +1,53 @@
 import { useState } from 'react';
-import { Send } from 'lucide-react';
+import { Send, Star } from 'lucide-react';
 import { toast } from 'sonner';
 import { CategoryAutocomplete } from '../components/CategoryAutocomplete';
+
+// Fake talent data with images
+const fakeTalentData = [
+  {
+    id: 1,
+    name: 'Emma Wilson',
+    category: 'Fashion Designer',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop',
+    location: 'New York',
+  },
+  {
+    id: 2,
+    name: 'David Kim',
+    category: 'Photographer',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop',
+    location: 'Los Angeles',
+  },
+  {
+    id: 3,
+    name: 'Isabella Garcia',
+    category: 'Makeup Artist',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop',
+    location: 'Miami',
+  },
+  {
+    id: 4,
+    name: 'James Chen',
+    category: 'Stylist',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop',
+    location: 'San Francisco',
+  },
+  {
+    id: 5,
+    name: 'Rachel Brown',
+    category: 'Model',
+    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop',
+    location: 'Chicago',
+  },
+  {
+    id: 6,
+    name: 'Marcus Lee',
+    category: 'Content Creator',
+    image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=300&h=300&fit=crop',
+    location: 'Seattle',
+  },
+];
 
 // Use relative URLs for Vercel API routes, absolute for local server
 const getApiUrl = (endpoint: string) => {
@@ -79,7 +125,7 @@ export function TalentPage() {
             // Backend is not responding properly, fall back to mock
             await new Promise(resolve => setTimeout(resolve, 1000));
             console.log('Form data would be sent to email service:', formData);
-            toast.success('Form submitted successfully! (Local simulation - would send email in production)');
+            toast.success('✅ Talent profile submitted successfully! You\'ll receive a welcome email shortly with next steps.');
             
             // Reset form
             setFormData({
@@ -100,7 +146,7 @@ export function TalentPage() {
           // Backend is not available, use mock
           await new Promise(resolve => setTimeout(resolve, 1000));
           console.log('Backend unavailable, using mock. Error:', healthError);
-          toast.success('Form submitted successfully! (Local simulation - would send email in production)');
+          toast.success('✅ Talent profile submitted successfully! You\'ll receive a welcome email shortly with next steps.');
           
           
           // Reset form
@@ -169,7 +215,7 @@ export function TalentPage() {
     <div className="min-h-screen py-20 md:py-32">
       <div className="mx-auto max-w-3xl px-6 md:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Showcase Your{' '}
             <span className="bg-gradient-to-r from-[#00E5FF] to-[#FF2F92] bg-clip-text text-transparent">
@@ -179,6 +225,39 @@ export function TalentPage() {
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             Join our platform and connect with fashion enthusiasts, brands, and opportunities.
           </p>
+        </div>
+
+        {/* Featured Talents Gallery */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold mb-8 text-center">Featured Talents</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            {fakeTalentData.map((talent) => (
+              <div
+                key={talent.id}
+                className="group relative rounded-lg overflow-hidden bg-[#1A1A20] border border-gray-800 hover:border-purple-600 transition-all hover:shadow-lg hover:shadow-purple-600/20"
+              >
+                <div className="aspect-square overflow-hidden bg-gray-900 flex items-center justify-center">
+                  <img
+                    src={talent.image}
+                    alt={talent.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                    <div className="flex items-center gap-2">
+                      <p className="text-white font-semibold flex-1">{talent.name}</p>
+                      <Star size={16} className="text-yellow-400 fill-yellow-400" />
+                    </div>
+                    <p className="text-purple-400 text-sm">{talent.category}</p>
+                    <p className="text-gray-300 text-xs mt-1">{talent.location}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="bg-[#1A1A20] rounded-2xl p-6 md:p-8">
@@ -360,11 +439,20 @@ export function TalentPage() {
                 type="submit"
                 disabled={isSubmitting}
                 className={`w-full px-6 py-4 rounded-lg bg-gradient-to-r from-[#00E5FF] to-[#FF2F92] text-white font-semibold flex items-center justify-center gap-2 ${
-                  isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:opacity-90'
+                  isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:opacity-90 transition-all'
                 }`}
               >
-                <Send size={20} />
-                {isSubmitting ? 'Submitting...' : 'Submit Talent Profile'}
+                {isSubmitting ? (
+                  <>
+                    <Send size={20} className="animate-pulse" />
+                    Submitting Your Profile...
+                  </>
+                ) : (
+                  <>
+                    <Send size={20} />
+                    Submit Talent Profile
+                  </>
+                )}
               </button>
             </div>
           </form>

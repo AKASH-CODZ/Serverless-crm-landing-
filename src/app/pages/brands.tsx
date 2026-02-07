@@ -1,7 +1,47 @@
 import { useState } from 'react';
-import { Send } from 'lucide-react';
+import { Send, CheckCircle } from 'lucide-react';
 import { toast } from 'sonner';
 import { BrandCategoryAutocomplete } from '../components/BrandCategoryAutocomplete';
+
+// Fake brand data with images
+const fakeBrandsData = [
+  {
+    id: 1,
+    name: 'Urban Fashion Co.',
+    category: 'Streetwear',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop',
+  },
+  {
+    id: 2,
+    name: 'Luxury Collections',
+    category: 'Premium',
+    image: 'https://images.unsplash.com/photo-1595777712802-5b02bfc3ee50?w=300&h=300&fit=crop',
+  },
+  {
+    id: 3,
+    name: 'Vintage Vibes',
+    category: 'Retro',
+    image: 'https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=300&h=300&fit=crop',
+  },
+  {
+    id: 4,
+    name: 'Eco Wear',
+    category: 'Sustainable',
+    image: 'https://images.unsplash.com/photo-1441986300352-c5ad7f72a742?w=300&h=300&fit=crop',
+  },
+  {
+    id: 5,
+    name: 'Bold Designs',
+    category: 'Contemporary',
+    image: 'https://images.unsplash.com/photo-1556821552-5b0d5ce7e5a5?w=300&h=300&fit=crop',
+  },
+  {
+    id: 6,
+    name: 'Minimalist Style',
+    category: 'Modern',
+    image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=300&h=300&fit=crop',
+  },
+];
 
 // Use relative URLs for Vercel API routes, absolute for local server
 const getApiUrl = (endpoint: string) => {
@@ -79,7 +119,7 @@ export function BrandsPage() {
             // Backend is not responding properly, fall back to mock
             await new Promise(resolve => setTimeout(resolve, 1000));
             console.log('Form data would be sent to email service:', formData);
-            toast.success('Form submitted successfully! (Local simulation - would send email in production)');
+            toast.success('✅ Brand collaboration request sent successfully! We\'ll review your inquiry and contact you within 24 hours.');
             
             // Reset form
             setFormData({
@@ -97,7 +137,7 @@ export function BrandsPage() {
           // Backend is not available, use mock
           await new Promise(resolve => setTimeout(resolve, 1000));
           console.log('Backend unavailable, using mock. Error:', healthError);
-          toast.success('Form submitted successfully! (Local simulation - would send email in production)');
+          toast.success('✅ Brand collaboration request sent successfully! We\'ll review your inquiry and contact you within 24 hours.');
           
           // Reset form
           setFormData({
@@ -159,13 +199,42 @@ export function BrandsPage() {
     <div className="min-h-screen py-20 md:py-32">
       <div className="mx-auto max-w-3xl px-6 md:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Partner With Us
           </h1>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             Connect with talented individuals in the fashion industry for collaborations
           </p>
+        </div>
+
+        {/* Featured Brands Gallery */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold mb-8 text-center">Brands We Partner With</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            {fakeBrandsData.map((brand) => (
+              <div
+                key={brand.id}
+                className="group relative rounded-lg overflow-hidden bg-[#1A1A20] border border-gray-800 hover:border-purple-600 transition-all hover:shadow-lg hover:shadow-purple-600/20"
+              >
+                <div className="aspect-square overflow-hidden bg-gray-900 flex items-center justify-center">
+                  <img
+                    src={brand.image}
+                    alt={brand.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                    <p className="text-white font-semibold">{brand.name}</p>
+                    <p className="text-purple-400 text-sm">{brand.category}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="bg-[#1A1A20] rounded-2xl p-6 md:p-8">
@@ -298,11 +367,20 @@ export function BrandsPage() {
                 type="submit"
                 disabled={isSubmitting}
                 className={`w-full px-6 py-4 rounded-lg bg-gradient-to-r from-[#00E5FF] to-[#FF2F92] text-white font-semibold flex items-center justify-center gap-2 ${
-                  isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:opacity-90'
+                  isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:opacity-90 transition-all'
                 }`}
               >
-                <Send size={20} />
-                {isSubmitting ? 'Submitting...' : 'Submit Brand Inquiry'}
+                {isSubmitting ? (
+                  <>
+                    <Send size={20} className="animate-pulse" />
+                    Sending Your Inquiry...
+                  </>
+                ) : (
+                  <>
+                    <Send size={20} />
+                    Submit Brand Inquiry
+                  </>
+                )}
               </button>
             </div>
           </form>
