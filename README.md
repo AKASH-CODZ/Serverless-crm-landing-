@@ -15,40 +15,128 @@ Fashion Nights is a platform that connects fashion talent, brands, and community
 
 The application is **fully deployed and live** at [fashionnights.in](https://www.fashionnights.in/). This template can be forked and customized for similar use cases.
 
-## 📸 Showoff and Live Proof
+## 📸 Platform Architecture & Live System Screenshots
 
-Here are real WhatsApp messages from users demonstrating the platform's success:
+Below are real screenshots demonstrating the **production deployment, automation workflows, and infrastructure setup** of the Fashion Nights platform.
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img src="/public/whatsapp-proof-1.jpeg" alt="WhatsApp Message 1" width="200"/>
-        <br/>
-        <b>User Feedback 1</b>
-      </td>
-      <td align="center">
-        <img src="/public/whatsapp-proof-2.jpeg" alt="WhatsApp Message 2" width="200"/>
-        <br/>
-        <b>User Feedback 2</b>
-      </td>
-    </tr>
-    <tr>
-      <td align="center">
-        <img src="/public/whatsapp-proof-3.jpeg" alt="WhatsApp Message 3" width="200"/>
-        <br/>
-        <b>User Feedback 3</b>
-      </td>
-      <td align="center">
-        <img src="/public/whatsapp-proof-4.jpeg" alt="WhatsApp Message 4" width="200"/>
-        <br/>
-        <b>User Feedback 4</b>
-      </td>
-    </tr>
-  </table>
-</div>
+---
 
-These messages showcase the positive response and engagement from our users, validating the effectiveness of the platform.
+### 1️⃣ Landing Page – Community Platform Interface
+
+<p align="center">
+<img src="assets/screenshots/landing-page.png" width="100%">
+</p>
+
+**Description**
+
+This screenshot shows the **main landing interface** of the Fashion Nights platform.
+
+Key UI components visible:
+
+* Modern responsive **React + Tailwind layout**
+* Navigation system for **Talent, Brands, and Community**
+* Card-based UI components for feature discovery
+* Dark theme styling with gradient UI elements
+* Mobile-friendly responsive grid layout
+
+Purpose of this page:
+
+* Introduces the platform
+* Directs users to submission forms
+* Displays featured content and galleries
+
+---
+
+### 2️⃣ Automated Email Notification System
+
+<p align="center">
+<img src="assets/screenshots/email-automation.png" width="100%">
+</p>
+
+**Description**
+
+This screenshot demonstrates the **automated email notification system** triggered when a user submits a form on the platform.
+
+Technical workflow:
+
+```
+User Form Submission
+        ↓
+Serverless API (Vercel Functions)
+        ↓
+Google Sheets Data Storage
+        ↓
+Email Notification via Nodemailer
+```
+
+Information included in notification emails:
+
+* User name
+* Email address
+* Category (Talent / Brand / Community)
+* Contact details
+* Additional profile data
+
+These emails allow administrators to **instantly review new submissions without logging into a dashboard**.
+
+⚠️ *All sensitive user data shown in this repository is demonstration data only.*
+
+---
+
+### 3️⃣ Production Monitoring – Vercel Observability
+
+<p align="center">
+<img src="assets/screenshots/vercel-observability.png" width="100%">
+</p>
+
+**Description**
+
+This screenshot shows the **production monitoring dashboard provided by Vercel Observability**.
+
+Metrics visible:
+
+* Edge request analytics
+* Serverless function activity
+* Fast data transfer statistics
+* Runtime compute usage
+* Error and timeout monitoring
+
+Benefits of this setup:
+
+* Real-time monitoring of serverless APIs
+* Performance analysis for user traffic
+* Early detection of backend issues
+* Infrastructure-level analytics
+
+This ensures the application remains **stable and scalable in production environments**.
+
+---
+
+### 4️⃣ Domain & DNS Configuration
+
+<p align="center">
+<img src="assets/screenshots/dns-configuration.png" width="100%">
+</p>
+
+**Description**
+
+This screenshot demonstrates the **domain DNS configuration used to deploy the platform to a custom domain**.
+
+Configuration includes:
+
+* A Record pointing root domain to hosting infrastructure
+* CNAME record linking **[www.fashionnights.in](http://www.fashionnights.in)**
+* Nameserver configuration via domain registrar
+* DMARC TXT record for email authentication
+
+This setup ensures:
+
+* Proper domain routing
+* Email authentication security
+* Stable domain resolution
+* Production-ready deployment configuration
+
+---
 
 ## 🚀 Key Features
 
