@@ -15,6 +15,41 @@ Fashion Nights is a platform that connects fashion talent, brands, and community
 
 The application is **fully deployed and live** at [fashionnights.in](https://www.fashionnights.in/). This template can be forked and customized for similar use cases.
 
+## 📸 Showoff and Live Proof
+
+Here are real WhatsApp messages from users demonstrating the platform's success:
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="/public/whatsapp-proof-1.jpeg" alt="WhatsApp Message 1" width="200"/>
+        <br/>
+        <b>User Feedback 1</b>
+      </td>
+      <td align="center">
+        <img src="/public/whatsapp-proof-2.jpeg" alt="WhatsApp Message 2" width="200"/>
+        <br/>
+        <b>User Feedback 2</b>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="/public/whatsapp-proof-3.jpeg" alt="WhatsApp Message 3" width="200"/>
+        <br/>
+        <b>User Feedback 3</b>
+      </td>
+      <td align="center">
+        <img src="/public/whatsapp-proof-4.jpeg" alt="WhatsApp Message 4" width="200"/>
+        <br/>
+        <b>User Feedback 4</b>
+      </td>
+    </tr>
+  </table>
+</div>
+
+These messages showcase the positive response and engagement from our users, validating the effectiveness of the platform.
+
 ## 🚀 Key Features
 
 - ✅ **Real-Time Database:** Google Sheets API acts as both CMS and database
