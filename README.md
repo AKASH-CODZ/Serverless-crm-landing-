@@ -24,7 +24,7 @@ Below are real screenshots demonstrating the **production deployment, automation
 ### 1️⃣ Landing Page – Community Platform Interface
 
 <p align="center">
-<img src="assets/screenshots/landing-page.png" width="100%">
+<img src="assets/screenshots/landing-page.png" width="80%">
 </p>
 
 **Description**
@@ -50,7 +50,7 @@ Purpose of this page:
 ### 2️⃣ Automated Email Notification System
 
 <p align="center">
-<img src="assets/screenshots/email-automation.png" width="100%">
+<img src="assets/screenshots/email-automation.png" width="80%">
 </p>
 
 **Description**
@@ -86,7 +86,7 @@ These emails allow administrators to **instantly review new submissions without 
 ### 3️⃣ Production Monitoring – Vercel Observability
 
 <p align="center">
-<img src="assets/screenshots/vercel-observability.png" width="100%">
+<img src="assets/screenshots/vercel-observability.png" width="80%">
 </p>
 
 **Description**
@@ -115,7 +115,7 @@ This ensures the application remains **stable and scalable in production environ
 ### 4️⃣ Domain & DNS Configuration
 
 <p align="center">
-<img src="assets/screenshots/dns-configuration.png" width="100%">
+<img src="assets/screenshots/dns-configuration.png" width="80%">
 </p>
 
 **Description**
